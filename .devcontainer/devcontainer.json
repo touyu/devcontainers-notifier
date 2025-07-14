@@ -1,0 +1,17 @@
+{
+  "name": "DevContainer Notify Extension Test",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "${containerWorkspaceFolder}/devcontainer-notify-0.0.1.vsix"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3456]
+}

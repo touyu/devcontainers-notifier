@@ -1,0 +1,54 @@
+{
+  "name": "devcontainer-notify",
+  "displayName": "DevContainer Notify",
+  "description": "Notify host when Claude Code hooks are triggered in DevContainer",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
+  "extensionKind": ["workspace", "ui"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "devcontainer-notify.triggerNotification",
+        "title": "Trigger DevContainer Notification"
+      },
+      {
+        "command": "devcontainer-notify.sendNotification",
+        "title": "Send Notification from Remote"
+      }
+    ],
+    "configuration": {
+      "title": "DevContainer Notify",
+      "properties": {
+        "devcontainer-notify.enableSound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sound notifications"
+        },
+        "devcontainer-notify.serverPort": {
+          "type": "number",
+          "default": 3456,
+          "description": "Port for the notification server"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
+    "package": "vsce package",
+    "build": "npm install && vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-notifier": "^10.0.1"
+  }
+}

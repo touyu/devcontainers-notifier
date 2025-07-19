@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 const notifier = require('node-notifier');
 
 function activate(context) {    
-    const config = vscode.workspace.getConfiguration('devcontainer-notifier');
+    const config = vscode.workspace.getConfiguration('devcontainers-notifier');
     const enabled = config.get('enabled');
     
     if (!enabled) {
-        console.log('DevContainer Notifier is disabled for this workspace');
+        console.log('Dev Containers Notifier is disabled for this workspace');
         return;
     }
     
@@ -37,7 +37,7 @@ function activate(context) {
     });
     
     const server = app.listen(port, '0.0.0.0', () => {
-        console.log(`DevContainer Notifier HTTP server listening on port ${port}`);
+        console.log(`Dev Containers Notifier HTTP server listening on port ${port}`);
     });
     
     // クリーンアップ時にサーバーを停止

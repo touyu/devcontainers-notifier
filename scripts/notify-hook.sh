@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Claude Code Hook Script for DevContainer Notifier
+# Claude Code Hook Script for Dev Containers Notifier
 
 # Get the hook type from the first argument (if provided)
 HOOK_TYPE="${1:-generic}"

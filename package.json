@@ -1,6 +1,6 @@
 {
-  "name": "devcontainer-notifier",
-  "displayName": "DevContainer Notifier",
+  "name": "devcontainers-notifier",
+  "displayName": "Dev Containers Notifier",
   "description": "Send native macOS notifications from DevContainer",
   "version": "0.0.1",
   "publisher": "touyu",
@@ -20,26 +20,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/touyu/devcontainer-notifier"
+    "url": "https://github.com/touyu/devcontainers-notifier"
   },
   "contributes": {
     "configuration": {
-      "title": "DevContainer Notifier",
+      "title": "Dev Containers Notifier",
       "properties": {
-        "devcontainer-notifier.port": {
+        "devcontainers-notifier.port": {
           "type": "number",
           "default": 3456,
           "description": "HTTP server port for notifications"
         },
-        "devcontainer-notifier.sound": {
+        "devcontainers-notifier.sound": {
           "type": "string",
           "default": "Funk",
           "description": "macOS notification sound (e.g., Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink)"
         },
-        "devcontainer-notifier.enabled": {
+        "devcontainers-notifier.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable DevContainer Notifier for this workspace"
+          "description": "Enable Dev Containers Notifier for this workspace"
         }
       }
     }
@@ -48,7 +48,7 @@
     "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
     "package": "vsce package",
     "build": "npm install && vsce package",
-    "install-extension": "code --install-extension devcontainer-notifier-0.0.1.vsix --force "
+    "install-extension": "code --install-extension devcontainers-notifier-0.0.1.vsix --force "
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",

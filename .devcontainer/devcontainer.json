@@ -1,5 +1,5 @@
 {
-  "name": "DevContainer Notifier",
+  "name": "Dev Containers Notifier",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},

@@ -5,6 +5,13 @@ const notifier = require('node-notifier');
 
 function activate(context) {    
     const config = vscode.workspace.getConfiguration('devcontainer-notifier');
+    const enabled = config.get('enabled');
+    
+    if (!enabled) {
+        console.log('DevContainer Notifier is disabled for this workspace');
+        return;
+    }
+    
     const port = config.get('port');
     const sound = config.get('sound');
     
@@ -13,8 +20,8 @@ function activate(context) {
     app.use(bodyParser.json());
     
     app.post('/notify', (req, res) => {
-        const title = req.body.title || 'DevContainer Notifier';
-        const message = req.body.message || 'Claude Codeが完了しました！';
+        const title = req.body.title;
+        const message = req.body.message;
 
         // macOSのネイティブ通知
         notifier.notify({

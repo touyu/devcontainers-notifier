@@ -44,17 +44,6 @@ curl -X POST http://host.docker.internal:3456/notify \
   }'
 ```
 
-### DevContainer Configuration
-
-Add this to your `.devcontainer/devcontainer.json` to expose the notification service:
-
-```json
-{
-  "forwardPorts": [3456],
-  "postCreateCommand": "echo 'Notification service available at http://host.docker.internal:3456'"
-}
-```
-
 ## Configuration
 
 Configure the extension through VSCode settings:

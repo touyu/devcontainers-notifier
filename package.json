@@ -6,7 +6,7 @@
   "publisher": "touyu",
   "icon": "images/icon.png",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
@@ -45,7 +45,6 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
     "package": "vsce package",
     "build": "npm install && vsce package",
     "install-extension": "code --install-extension devcontainers-notifier-0.0.1.vsix --force "

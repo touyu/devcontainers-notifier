@@ -8,10 +8,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "${containerWorkspaceFolder}/devcontainer-notify-0.0.1.vsix"
+        "./devcontainer-notify-0.0.1.vsix"
       ]
     }
   },
-  "postCreateCommand": "npm install",
-  "forwardPorts": [3456]
+  "postCreateCommand": "npm install"
 }

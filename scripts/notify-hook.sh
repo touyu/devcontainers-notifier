@@ -6,13 +6,22 @@
 HOOK_TYPE="${1:-generic}"
 
 # Construct the notification message
-MESSAGE="Claude Code hook triggered: $HOOK_TYPE"
+case "$HOOK_TYPE" in
+  "NOTIFICATION")
+    MESSAGE="Claude Codeからの通知"
+    ;;
+  "STOP")
+    MESSAGE="Claude Codeの処理が完了しました"
+    ;;
+  *)
+    MESSAGE="Claude Code: $HOOK_TYPE"
+    ;;
+esac
 
 # Send notification via HTTP to the extension's server
-curl -X POST http://localhost:3456/notify \
+curl -X POST http://host.docker.internal:3456/notify \
   -H "Content-Type: application/json" \
   -d "{\"message\":\"$MESSAGE\"}" \
-  --silent --fail || true
 
 # Continue with the original hook behavior
 exit 0

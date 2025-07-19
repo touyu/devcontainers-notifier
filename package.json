@@ -3,15 +3,24 @@
   "displayName": "DevContainer Notify",
   "description": "Notify host when Claude Code hooks are triggered in DevContainer",
   "version": "0.0.1",
+  "publisher": "touyu",
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
   "main": "./src/extension.js",
-  "extensionKind": ["workspace", "ui"],
+  "extensionKind": [
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/devcontainer-notify"
+  },
   "contributes": {
     "commands": [
       {
@@ -26,15 +35,15 @@
     "configuration": {
       "title": "DevContainer Notify",
       "properties": {
-        "devcontainer-notify.enableSound": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable sound notifications"
-        },
-        "devcontainer-notify.serverPort": {
+        "devcontainer-notify.port": {
           "type": "number",
           "default": 3456,
-          "description": "Port for the notification server"
+          "description": "HTTP server port for notifications"
+        },
+        "devcontainer-notify.sound": {
+          "type": "string",
+          "default": "Funk",
+          "description": "macOS notification sound (e.g., Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink)"
         }
       }
     }
@@ -42,12 +51,16 @@
   "scripts": {
     "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
     "package": "vsce package",
-    "build": "npm install && vsce package"
+    "build": "npm install && vsce package",
+    "install-extension": "code --install-extension devcontainer-notify-0.0.1.vsix --force "
   },
   "devDependencies": {
-    "@types/vscode": "^1.74.0"
+    "@types/vscode": "^1.74.0",
+    "vsce": "^2.15.0"
   },
   "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "node-notifier": "^10.0.1"
   }

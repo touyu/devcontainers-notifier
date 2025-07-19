@@ -3,10 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const notifier = require('node-notifier');
 
-function activate(context) {
-    console.log('DevContainer Notify (Local) is active');
-    
-    const config = vscode.workspace.getConfiguration('devcontainer-notify');
+function activate(context) {    
+    const config = vscode.workspace.getConfiguration('devcontainer-notifier');
     const port = config.get('port');
     const sound = config.get('sound');
     
@@ -15,11 +13,12 @@ function activate(context) {
     app.use(bodyParser.json());
     
     app.post('/notify', (req, res) => {
+        const title = req.body.title || 'DevContainer Notifier';
         const message = req.body.message || 'Claude Codeが完了しました！';
 
         // macOSのネイティブ通知
         notifier.notify({
-            title: 'DevContainer Notify',
+            title: title,
             message: message,
             sound: sound, // 設定から取得した通知音を使用
             // bundleId: 'com.microsoft.VSCode',
@@ -31,7 +30,7 @@ function activate(context) {
     });
     
     const server = app.listen(port, '0.0.0.0', () => {
-        console.log(`DevContainer Notify HTTP server listening on port ${port}`);
+        console.log(`DevContainer Notifier HTTP server listening on port ${port}`);
     });
     
     // クリーンアップ時にサーバーを停止

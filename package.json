@@ -1,6 +1,6 @@
 {
-  "name": "devcontainer-notify",
-  "displayName": "DevContainer Notify",
+  "name": "devcontainer-notifier",
+  "displayName": "DevContainer Notifier",
   "description": "Notify host when Claude Code hooks are triggered in DevContainer",
   "version": "0.0.1",
   "publisher": "touyu",
@@ -19,28 +19,28 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/devcontainer-notify"
+    "url": "https://github.com/touyu/devcontainer-notifier"
   },
   "contributes": {
     "commands": [
       {
-        "command": "devcontainer-notify.triggerNotification",
+        "command": "devcontainer-notifier.triggerNotification",
         "title": "Trigger DevContainer Notification"
       },
       {
-        "command": "devcontainer-notify.sendNotification",
+        "command": "devcontainer-notifier.sendNotification",
         "title": "Send Notification from Remote"
       }
     ],
     "configuration": {
-      "title": "DevContainer Notify",
+      "title": "DevContainer Notifier",
       "properties": {
-        "devcontainer-notify.port": {
+        "devcontainer-notifier.port": {
           "type": "number",
           "default": 3456,
           "description": "HTTP server port for notifications"
         },
-        "devcontainer-notify.sound": {
+        "devcontainer-notifier.sound": {
           "type": "string",
           "default": "Funk",
           "description": "macOS notification sound (e.g., Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink)"
@@ -52,7 +52,7 @@
     "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
     "package": "vsce package",
     "build": "npm install && vsce package",
-    "install-extension": "code --install-extension devcontainer-notify-0.0.1.vsix --force "
+    "install-extension": "code --install-extension devcontainer-notifier-0.0.1.vsix --force "
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",

@@ -7,3 +7,4 @@
 **/*.map
 .eslintrc.json
 webpack.config.js
+.dist/

@@ -1,14 +1,14 @@
 # Dev Containers Notifier
 
-Send native macOS notifications from your DevContainer environment.
+Send native macOS notifications from your Dev Containers environment.
 
 ## Overview
 
-Dev Containers Notifier is a VSCode extension that enables developers to send native macOS notifications from within a DevContainer. This bridges the gap between containerized development environments and the host system's notification capabilities, making it perfect for long-running tasks, build completions, or any scenario where you need to be alerted from your remote development environment.
+Dev Containers Notifier is a VSCode extension that enables developers to send native macOS notifications from within a Dev Containers. This bridges the gap between containerized development environments and the host system's notification capabilities, making it perfect for long-running tasks, build completions, or any scenario where you need to be alerted from your remote development environment.
 
 ## Features
 
-- 🔔 **Native macOS Notifications**: Send beautiful native notifications from DevContainer to your Mac
+- 🔔 **Native macOS Notifications**: Send beautiful native notifications from Dev Containers to your Mac
 - 🎵 **Customizable Sounds**: Choose from various macOS system sounds for your notifications
 - 🌐 **HTTP API**: Simple HTTP endpoint for easy integration with any tool or script
 - ⚙️ **Configurable**: Per-workspace settings for port, sound, and enable/disable
@@ -27,13 +27,13 @@ Dev Containers Notifier is a VSCode extension that enables developers to send na
 
 ### Basic Setup
 
-1. Install the extension on your host VSCode (not inside the DevContainer)
+1. Install the extension on your host VSCode (not inside the Dev Containers)
 2. The extension automatically starts when VSCode launches
-3. From your DevContainer, send notifications using HTTP POST requests
+3. From your Dev Containers, send notifications using HTTP POST requests
 
 ### Sending Notifications
 
-Send a POST request to the notification endpoint from within your DevContainer:
+Send a POST request to the notification endpoint from within your Dev Containers:
 
 ```bash
 curl -X POST http://host.docker.internal:3456/notify \
@@ -51,7 +51,7 @@ Configure the extension through VSCode settings:
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
 | `devcontainers-notifier.port` | number | 3456 | HTTP server port for notifications |
-| `devcontainers-notifier.sound` | string | "Funk" | macOS notification sound |
+| `devcontainers-notifier.sound` | dropdown | "Funk" | macOS notification sound (select from dropdown) |
 | `devcontainers-notifier.enabled` | boolean | true | Enable/disable for current workspace |
 
 ### Available Notification Sounds
@@ -75,7 +75,7 @@ Configure the extension through VSCode settings:
 
 ```
 ┌─────────────────┐         ┌─────────────────┐
-│   DevContainer  │         │   Host macOS    │
+│   Dev Containers  │         │   Host macOS    │
 │                 │  HTTP   │                 │
 │  Your App/Script├────────►│ VSCode Extension│
 │                 │ :3456   │                 │
@@ -129,7 +129,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 - Built with [node-notifier](https://github.com/mikaelbr/node-notifier) for cross-platform notification support
-- Inspired by the need for better DevContainer integration with host systems
+- Inspired by the need for better Dev Containers integration with host systems
 
 ## Support
 
@@ -141,4 +141,4 @@ If you encounter any issues or have questions:
 
 ---
 
-Made with ❤️ for the DevContainer community
+Made with ❤️ for the Dev Containers community

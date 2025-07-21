@@ -1,8 +1,8 @@
 {
   "name": "devcontainers-notifier",
   "displayName": "Dev Containers Notifier",
-  "description": "Send native macOS notifications from DevContainer",
-  "version": "0.0.1",
+  "description": "Send native macOS notifications from Dev Containers",
+  "version": "0.0.5",
   "publisher": "touyu",
   "icon": "images/icon.png",
   "engines": {
@@ -34,7 +34,23 @@
         "devcontainers-notifier.sound": {
           "type": "string",
           "default": "Funk",
-          "description": "macOS notification sound (e.g., Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink)"
+          "enum": [
+            "Basso",
+            "Blow",
+            "Bottle",
+            "Frog",
+            "Funk",
+            "Glass",
+            "Hero",
+            "Morse",
+            "Ping",
+            "Pop",
+            "Purr",
+            "Sosumi",
+            "Submarine",
+            "Tink"
+          ],
+          "description": "macOS notification sound"
         },
         "devcontainers-notifier.enabled": {
           "type": "boolean",
@@ -45,9 +61,10 @@
     }
   },
   "scripts": {
-    "package": "vsce package",
-    "build": "npm install && vsce package",
-    "install-extension": "code --install-extension devcontainers-notifier-0.0.1.vsix --force "
+    "package": "vsce package --out dist/",
+    "build": "npm install && vsce package --out dist/",
+    "install-extension": "code --install-extension devcontainers-notifier-0.0.1.vsix --force",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",

@@ -2,7 +2,7 @@
   "name": "devcontainers-notifier",
   "displayName": "Dev Containers Notifier",
   "description": "Send native macOS notifications from Dev Containers",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "touyu",
   "icon": "images/icon.png",
   "engines": {

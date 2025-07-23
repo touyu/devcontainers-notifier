@@ -35,14 +35,20 @@ Or install directly from: [Marketplace](https://marketplace.visualstudio.com/ite
 
 ### Sending Notifications
 
-Send a POST request to the notification endpoint from within your Dev Containers:
+Run `test-notification.sh` either on the host or inside the container:
+
+```bash
+sh scripts/test-notification.sh
+```
+
+Or send a POST request to the notification endpoint from within your Dev Containers:
 
 ```bash
 curl -X POST http://host.docker.internal:3456/notify \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "Build Complete",
-    "message": "Your project has been built successfully!"
+    "title": "Dev Containers Notifier",
+    "message": "[Test] Notifications from this extension are enabled!"
   }'
 ```
 
@@ -55,8 +61,9 @@ The repository includes ready-to-use scripts for Claude Code Hooks in the `/scri
 
 These scripts can be used with Claude Code to send native macOS notifications when specific events occur. To use them with Claude Code:
 
-1. Configure Claude Code to use the hook scripts
-2. The scripts will automatically send notifications to your Mac when triggered
+1. Copy the script you want to use to your own project
+2. Configure Claude Code to use the hook scripts
+3. The scripts will automatically send notifications to your Mac when triggered
 
 A sample Claude Code Hooks configuration can be found at [`/.claude/settings.json`](https://github.com/touyu/devcontainers-notifier/blob/main/.claude/settings.json) in this repository.
 
@@ -101,20 +108,7 @@ Configure the extension through VSCode settings:
 
 ### Available Notification Sounds
 
-- Basso
-- Blow
-- Bottle
-- Frog
-- Funk (default)
-- Glass
-- Hero
-- Morse
-- Ping
-- Pop
-- Purr
-- Sosumi
-- Submarine
-- Tink
+`Basso`, `Blow`, `Bottle`, `Frog`, `Funk` (default), `Glass`, `Hero`, `Morse`, `Ping`, `Pop`, `Purr`, `Sosumi`, `Submarine`, `Tink`
 
 ## Architecture
 

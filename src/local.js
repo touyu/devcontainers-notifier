@@ -76,7 +76,7 @@ function setupServer(config, outputChannel) {
             title: title,
             message: message,
             sound: config.get('sound'), // 常に最新の設定値を使用
-            wait: false
+            wait: true
         });
         
         outputChannel.appendLine(`  Status: Notification sent successfully`);

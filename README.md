@@ -29,7 +29,7 @@ Or install directly from: [Marketplace](https://marketplace.visualstudio.com/ite
 
 ### Basic Setup
 
-1. Install the extension on your host VSCode (not inside the Dev Containers)
+1. Install the extension on your host VSCode (**not inside the Dev Container**)
 2. The extension automatically starts when VSCode launches
 3. From your Dev Containers, send notifications using HTTP POST requests
 

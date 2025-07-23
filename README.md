@@ -44,6 +44,20 @@ curl -X POST http://host.docker.internal:3456/notify \
   }'
 ```
 
+### Claude Code Hooks Integration
+
+The repository includes ready-to-use scripts for Claude Code Hooks in the `/scripts` directory:
+
+- `claude-code-hooks-en.sh`: English version of the notification hook
+- `claude-code-hooks-ja.sh`: Japanese version of the notification hook
+
+These scripts can be used with Claude Code to send native macOS notifications when specific events occur. To use them with Claude Code:
+
+1. Configure Claude Code to use the hook scripts
+2. The scripts will automatically send notifications to your Mac when triggered
+
+A sample Claude Code Hooks configuration can be found at `/.claude/settings.json` in this repository.
+
 ## Configuration
 
 Configure the extension through VSCode settings:

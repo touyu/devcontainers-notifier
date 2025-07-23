@@ -1,0 +1,26 @@
+{
+  "hooks": {
+	"Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh scripts/claude-code-hooks-en.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh scripts/claude-code-hooks-en.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -5,6 +5,10 @@
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
+  "mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude.json,target=/home/node/.claude.json,type=bind,consistency=cached"
+	],
   "customizations": {
     "vscode": {
     }

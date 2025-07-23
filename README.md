@@ -2,8 +2,6 @@
 
 Send native macOS notifications from your Dev Containers environment.
 
-[![version](https://vsmarketplacebadges.dev/version/touyu.devcontainers-notifier.svg)](https://marketplace.visualstudio.com/items?itemName=touyu.devcontainers-notifier)
-
 ## Overview
 
 Dev Containers Notifier is a VSCode extension that enables developers to send native macOS notifications from within a Dev Containers. This bridges the gap between containerized development environments and the host system's notification capabilities, making it perfect for long-running tasks, build completions, or any scenario where you need to be alerted from your remote development environment.

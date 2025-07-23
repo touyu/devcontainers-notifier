@@ -23,6 +23,8 @@ Dev Containers Notifier is a VSCode extension that enables developers to send na
 3. Search for "Dev Containers Notifier"
 4. Click Install
 
+Or install directly from: [https://marketplace.visualstudio.com/items?itemName=touyu.devcontainers-notifier](https://marketplace.visualstudio.com/items?itemName=touyu.devcontainers-notifier)
+
 ## Usage
 
 ### Basic Setup
@@ -57,6 +59,35 @@ These scripts can be used with Claude Code to send native macOS notifications wh
 2. The scripts will automatically send notifications to your Mac when triggered
 
 A sample Claude Code Hooks configuration can be found at `/.claude/settings.json` in this repository.
+
+```json
+{
+  "hooks": {
+	"Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh scripts/claude-code-hooks-en.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh scripts/claude-code-hooks-en.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## Configuration
 
@@ -102,13 +133,6 @@ Configure the extension through VSCode settings:
                             │ Center          │
                             └─────────────────┘
 ```
-
-## Security Considerations
-
-- The HTTP server binds to `0.0.0.0:3456` by default
-- Only use this extension in trusted development environments
-- Consider configuring firewall rules if needed
-- The extension only accepts POST requests to `/notify`
 
 ## Development
 

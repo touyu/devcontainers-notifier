@@ -11,7 +11,7 @@ Dev Containers Notifier is a VSCode extension that enables developers to send na
 - **Native macOS Notifications**: Send native notifications from Dev Containers to your Mac
 - **Customizable Sounds**: Choose from various macOS system sounds for your notifications
 - **HTTP API**: Simple HTTP endpoint for easy integration with any tool or script
-- **Configurable**: Per-workspace settings for port, sound, and enable/disable
+- **Configurable**: Port, sound, and enable/disable settings
 - **Lightweight**: Minimal performance impact with a simple Express server
 
 ## Installation

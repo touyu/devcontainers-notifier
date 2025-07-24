@@ -70,7 +70,7 @@ A sample Claude Code Hooks configuration can be found at [`/.claude/settings.jso
 ```json
 {
   "hooks": {
-	"Notification": [
+    "Notification": [
       {
         "matcher": "",
         "hooks": [

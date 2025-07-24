@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# https://docs.anthropic.com/en/docs/claude-code/hooks#userpromptsubmit-input
+# https://docs.anthropic.com/en/docs/claude-code/hooks
 
 # Read JSON from stdin and store it in a variable.
 input=$(cat)
